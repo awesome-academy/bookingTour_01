@@ -25,8 +25,7 @@
 	<bean id="entityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="packagesToScan"
-			value="app.model" />
+		<property name="packagesToScan" value="app.model" />
 		<property name="jpaVendorAdapter">
 			<bean
 				class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
@@ -52,7 +51,5 @@
 	<!-- Configure Spring Data JPA and set the base package of the repository 
 		interfaces -->
 
-	<jpa:repositories
-		base-package="app.dao" />
-
+	<jpa:repositories base-package="app.dao" entity-manager-factory-ref="entityManagerFactory"></jpa:repositories>
 </beans>
