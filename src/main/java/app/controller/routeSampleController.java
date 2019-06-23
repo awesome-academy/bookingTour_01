@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class publicRouteSampleController {
+public class routeSampleController {
 
 	@RequestMapping(value = {"/","/index"}, method = RequestMethod.GET)
 	public String index() {
