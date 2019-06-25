@@ -65,12 +65,16 @@
 											<td th:text="${car.numberOfSeater}"></td>
 											<td th:text="${car.licensePlate}"></td>
 											<td>
+												<a th:href="@{'/admin/cars/edit'(id=${car.id})}">
 												<button type="button" class="btn btn-default pull-right">
 													<i class="fa fa-pencil"></i>
 												</button>
+												</a>
+												<a th:href="@{'/admin/cars/delete'(id=${car.id})}">
 												<button type="button" class="btn btn-default pull-right">
 													<i class="fa fa-trash"></i>
 												</button>
+												</a>
 												<button type="button" class="btn btn-default pull-right">
 													<i class="fa fa-gg"></i>
 												</button>
