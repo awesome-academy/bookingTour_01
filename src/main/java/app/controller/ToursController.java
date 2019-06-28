@@ -22,7 +22,6 @@ public class ToursController extends BaseController {
 	@Autowired
 	private ToursService toursService;
 
-
 	@RequestMapping(value = { "/", "index" }, method = RequestMethod.GET)
 	public String home() {
 		return "redirect:/tours/index/page/1";

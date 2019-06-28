@@ -11,4 +11,5 @@ public interface CarService extends BaseService<Integer, Car> {
 	List<Car> loadCars(Integer offsets,Integer maxResults);
 	
 	long countCar();
+	List<Car> loadAllCars();
 }

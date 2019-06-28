@@ -14,7 +14,7 @@
 <div th:replace="admin/static/css :: css">...</div>
 <!-- end css -->
 <head>
-<title>Add Employee Form</title>
+<title>Add Tour Form</title>
 </head>
 
 
@@ -32,7 +32,7 @@
 			<!-- Content Header (Page header) -->
 			<section class="content-header">
 				<h1>
-					Add <small>Cars</small>
+					Add <small>Tour</small>
 				</h1>
 				<ol class="breadcrumb">
 					<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -54,27 +54,104 @@
 							</div>
 							<!-- /.box-header -->
 							<!-- form start -->
-							<form role="form" th:action="@{/admin/cars/create/}"
-								method="post" th:object="${car}">
+							<form role="form" th:action="@{/admin/tours/create/}"
+								method="post" enctype="multipart/form-data" th:object="${tour}">
 
 								<div class="box-body">
 									<div class="form-group">
-										<label for="exampleInputEmail1">Number of seater</label>
-										<input class="form-control" id="exampleInputEmail1"
-											placeholder="Enter number of seater"
-											th:field="*{numberOfSeater}">
-										<h5 th:if="${#fields.hasErrors('numberOfSeater')}" th:errors="*{numberOfSeater}" class="error"></h5>
+										<label for="exampleInputPassword1">Title</label>
+										 <input
+											class="form-control" id="exampleInputPassword"
+											placeholder="enter title" th:field="*{tourTitle}">
+										
 									</div>
 									<div class="form-group">
-										<label for="exampleInputPassword1">license plate</label> <input
-											class="form-control" id="exampleInputPassword1"
-											placeholder="enter license plate" th:field="*{licensePlate}">
-											<h5 th:if="${#fields.hasErrors('licensePlate')}" th:errors="*{licensePlate}" class="error"></h5>
+										<label for="exampleInputPassword1">Image</label>
+										<input type="file"  value="Upload File"  name="file" th:field="*{tourImage}" />
+										
+									</div>
+									
+									<div class="form-group">
+										<label for="exampleInputPassword1">Description</label>
+										 <input
+											class="form-control" id="exampleInputPassword"
+											placeholder="enter description" th:field="*{tourDescription}">
+										
+									</div>
+									<div class="form-group">
+										<label for="exampleInputPassword1">Price</label>
+										 <input
+											class="form-control" id="exampleInputPassword"
+											placeholder="enter price" th:field="*{tourPrice}">
+										
+									</div>
+									
+									<div class="form-group">
+										<label for="exampleInputPassword1">Sale off percent</label>
+										 <input
+											class="form-control" id="exampleInputPassword"
+											placeholder="enter sale off percent" th:field="*{tourSaleOff}">
+										<!-- h5 th:if="${#fields.hasErrors('tourDetailsNumPerson')}" th:errors="*{tourDetailsNumPerson}" class="error"></h5-->
+										
+									</div>
+								
+									<div class="form-group">
+										<label >From</label>
+										 
+										 <select class="form-control"  th:field="*{from.placeId}">
+						                         <option th:each="place : ${places}"
+						                            th:value="${place.placeId}"
+						                            th:utext=${place.placeName}
+						                           ></option>
+						                  </select>
+									</div>
+									<div class="form-group">
+										<label >Destination</label>
+										 
+										 <select class="form-control"  th:field="*{destination.placeId}">
+						                         <option th:each="place : ${places}"
+						                            th:value="${place.placeId}"
+						                            th:utext=${place.placeName}
+						                           ></option>
+						                  </select>
+									</div>
+									<div class="form-group">
+										<label >Rating</label>
+										 
+										 <select class="form-control"  th:field="*{tourRating}">
+						                         <option th:each="i: ${#numbers.sequence( 1, 5)}"
+						                            th:value="${i}"
+						                            th:utext="${i}"
+						                           ></option>
+						                  </select>
+									</div>
+									<div class="form-group">
+										<label >Status</label>
+										 
+										 <select class="form-control"  th:field="*{tourStatus}">
+						                         <option th:value="0"
+						                            th:utext="false"
+						                           ></option>
+						                           <option th:value="1"
+						                            th:utext="true"
+						                           ></option>
+						                  </select>
+									</div>
+									<div class="form-group">
+										<label >Status</label>
+										 
+										 <select class="form-control"  th:field="*{car.id}">
+										 	<option th:each="car : ${cars}"
+						                            th:value="${car.id}"
+						                            th:utext="${car.numberOfSeater}+' seaters - '+${car.licensePlate}"
+						                           ></option>
+						                         
+						                  </select>
 									</div>
 								</div>
 								<!-- /.box-body -->
 								<div class="box-footer">
-									<a th:href="@{/admin/cars/}"><button
+									<a th:href="@{/admin/tours/}"><button
 											class="btn btn-default">Cancel</button></a>
 									<button type="submit" class="btn btn-info pull-right"
 										value="Save">save</button>
@@ -82,6 +159,7 @@
 							</form>
 						</div>
 						<!-- /.box -->
+						
 					</div>
 					<!--/.col (left) -->
 
