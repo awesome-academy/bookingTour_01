@@ -379,20 +379,28 @@
 			</div>
 		</div>
 		<div class="tour-wrap">
-			<a href="#" class="tour-entry animate-box">
-				<div class="tour-img"
-					style="background-image: url(/BookingTour/assets/images/tour-1.jpg);"></div> <span
-				class="desc">
+			<a th:each="tour : ${toursList}" class="tour-entry animate-box" >
+				<div class="tour-img" style="background-image: url(/BookingTour/assets/images/tour-1.jpg);"></div> 
+					<span class="desc">
 					<p class="star">
-						<span><i class="icon-star-full"></i><i
-							class="icon-star-full"></i><i class="icon-star-full"></i><i
-							class="icon-star-full"></i><i class="icon-star-full"></i></span> 545
-						Reviews
+						<span th:each="i: ${#numbers.sequence( 1, __${tour.tourRating}__)}" >
+							<i class="icon-star-full"></i>
+						
+						</span> 
+						545	Reviews
 					</p>
-					<h2>Athens, Greece</h2> <span class="city">Athens, Greece</span> <span
-					class="price">$450</span>
+					<h2 > 
+						<span th:text=${tour.from.placeName}></span>, <span th:text=${tour.destination.placeName}></span>
+					</h2>
+					 <span class="city">
+					 	<span th:text=${tour.from.placeName}></span>, <span th:text=${tour.destination.placeName}></span>
+					 </span> 
+					 <span class="price" th:text=${tour.tourPrice}>$450</span>
 			</span>
-			</a> <a href="#" class="tour-entry animate-box">
+			</a> 
+			<div>
+			<!-- 
+			<a href="#" class="tour-entry animate-box">
 				<div class="tour-img"
 					style="background-image: url(/BookingTour/assets/images/tour-2.jpg);"></div> <span
 				class="desc">
@@ -405,7 +413,8 @@
 					<h2>Family Tour in Thailand</h2> <span class="city">Athens,
 						Greece</span> <span class="price">$450</span>
 			</span>
-			</a> <a href="#" class="tour-entry animate-box">
+			</a> 
+			<a href="#" class="tour-entry animate-box">
 				<div class="tour-img"
 					style="background-image: url(/BookingTour/assets/images/tour-3.jpg);"></div> <span
 				class="desc">
@@ -418,7 +427,8 @@
 					<h2>Family Tour in Philippines</h2> <span class="city">Lipa,
 						Philippines</span> <span class="price">$450</span>
 			</span>
-			</a> <a href="#" class="tour-entry animate-box">
+			</a> 
+			<a href="#" class="tour-entry animate-box">
 				<div class="tour-img"
 					style="background-image: url(/BookingTour/assets/images/tour-4.jpg);"></div> <span
 				class="desc">
@@ -431,7 +441,8 @@
 					<h2>Family Tour in Greece</h2> <span class="city">Athens,
 						Greece</span> <span class="price">$450</span>
 			</span>
-			</a> <a href="#" class="tour-entry animate-box">
+			</a> 
+			<a href="#" class="tour-entry animate-box">
 				<div class="tour-img"
 					style="background-image: url(/BookingTour/assets/images/tour-5.jpg);"></div> <span
 				class="desc">
@@ -444,7 +455,8 @@
 					<h2>Family Tour in Greece</h2> <span class="city">Athens,
 						Greece</span> <span class="price">$450</span>
 			</span>
-			</a> <a href="#" class="tour-entry animate-box">
+			</a> 
+			<a href="#" class="tour-entry animate-box">
 				<div class="tour-img"
 					style="background-image: url(/BookingTour/assets/images/tour-6.jpg);"></div> <span
 				class="desc">
@@ -457,7 +469,8 @@
 					<h2>Family Tour in Greece</h2> <span class="city">Athens,
 						Greece</span> <span class="price">$450</span>
 			</span>
-			</a> <a href="#" class="tour-entry animate-box">
+			</a> 
+			<a href="#" class="tour-entry animate-box">
 				<div class="tour-img"
 					style="background-image: url(/BookingTour/assets/images/tour-7.jpg);"></div> <span
 				class="desc">
@@ -470,7 +483,8 @@
 					<h2>Family Tour in Greece</h2> <span class="city">Athens,
 						Greece</span> <span class="price">$450</span>
 			</span>
-			</a> <a href="#" class="tour-entry animate-box">
+			</a>
+			<a href="#" class="tour-entry animate-box">
 				<div class="tour-img"
 					style="background-image: url(/BookingTour/assets/images/tour-8.jpg);"></div> <span
 				class="desc">
@@ -484,6 +498,8 @@
 						Greece</span> <span class="price">$450</span>
 			</span>
 			</a>
+			-->
+			</div>
 		</div>
 	</div>
 

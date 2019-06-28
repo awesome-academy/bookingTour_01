@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class routeSampleController {
 
-	@RequestMapping(value = {"/","/index"}, method = RequestMethod.GET)
-	public String index() {
-		return "index";
-	}
+//	@RequestMapping(value = {"/","/index"}, method = RequestMethod.GET)
+//	public String index() {
+//		return "index";
+//	}
 
 	@RequestMapping(value = "/tours", method = RequestMethod.GET)
 	public String tour() {
