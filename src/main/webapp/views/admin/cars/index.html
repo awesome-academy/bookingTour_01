@@ -46,7 +46,7 @@
 							<div class="box-header">
 								<h3 class="box-title">
 									<button type="button" class="btn btn-default pull-right">
-										<a th:href="@{/admin/cars/new}"><i class="fa fa-plus"></i>
+										<a th:href="@{/admin/cars/new(pageNumber=${currentIndex})}"><i class="fa fa-plus"></i>
 											Add</a>
 									</button>
 
@@ -76,7 +76,7 @@
 												<td th:text=${page.pageList.indexOf(car)}></td>
 												<td th:text="${car.numberOfSeater}"></td>
 												<td th:text="${car.licensePlate}"></td>
-												<td><a th:href="@{'/admin/cars/edit'(id=${car.id})}">
+												<td><a th:href="@{'/admin/cars/edit'(id=${car.id},pageNumber=${currentIndex})}">
 														<button type="button" class="btn btn-default pull-right">
 															<i class="fa fa-pencil"></i>
 														</button>

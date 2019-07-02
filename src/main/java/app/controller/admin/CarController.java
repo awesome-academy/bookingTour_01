@@ -39,7 +39,7 @@ public class CarController extends BaseController {
 	}
 
 	@RequestMapping(value = { "/index/page/{pageNumber}" }, method = RequestMethod.GET)
-	public ModelAndView showCarPage(HttpServletRequest request, @PathVariable int pageNumber, Model model) {
+	public ModelAndView index(@PathVariable int pageNumber, Model model) {
 
 		int pageSize = Constants.PAGESIZE;
 
@@ -64,10 +64,14 @@ public class CarController extends BaseController {
 	}
 
 	@RequestMapping(value = "/new")
-	public String newCar(Map<String, Object> model) {
+	public ModelAndView newCar(@RequestParam int pageNumber,Map<String, Object> model) {
+		ModelAndView mov = new ModelAndView("admin/cars/add");
 		Car car = new Car();
 		model.put("car", car);
-		return "admin/cars/add";
+		
+		mov.addObject("pageNumber",pageNumber);
+		
+		return mov;
 	}
 
 	@RequestMapping(value = "/create", method = RequestMethod.POST)
@@ -86,8 +90,9 @@ public class CarController extends BaseController {
 	}
 
 	@RequestMapping("/edit")
-	public ModelAndView editCustomerForm(@RequestParam int id, RedirectAttributes redirectAttributes) {
+	public ModelAndView editCustomerForm(@RequestParam int id,@RequestParam int pageNumber, RedirectAttributes redirectAttributes) {
 		ModelAndView mav = new ModelAndView("admin/cars/edit");
+		
 		Car car = carService.findById(id);
 
 		if (car == null) {
@@ -95,16 +100,17 @@ public class CarController extends BaseController {
 			redirectAttributes.addFlashAttribute("alertClass", "alert-danger");
 			return mav;
 		}
-
+        
 		mav.addObject("car", car);
-
+		mav.addObject("pageNumber",pageNumber);
+		
 		return mav;
 	}
 
 	@RequestMapping(value = "/delete{id}", method = RequestMethod.GET)
 	public String deleteCustomerForm(@RequestParam int id, @RequestParam int idPage,
 			RedirectAttributes redirectAttributes) {
-		carService.deleteCar(id);
+		    carService.deleteCar(id);
 
 		redirectAttributes.addFlashAttribute("message", getProperties().getProperty("sucess.deleteCar"));
 		redirectAttributes.addFlashAttribute("alertClass", "alert-success");

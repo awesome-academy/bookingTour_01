@@ -25,10 +25,10 @@ public class BaseController {
 	}
 
 	public long setEndPagination(long count) {
-		if (count % Constants.PAGESIZE == 0)
+		if (count % Constants.PAGESIZE == 0) 
 			return count / Constants.PAGESIZE;
-		else
-			return count / Constants.PAGESIZE + 1;
+		
+		return count / Constants.PAGESIZE + 1;
 	}
     
 	public Model setPaginationModelObject(int pageNumber,long end,Model model) {

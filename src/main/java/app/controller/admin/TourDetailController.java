@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import app.model.Tours;
 import app.service.ToursService;
 
-@RequestMapping("admin/tours/")
+@RequestMapping("admin/tourswtf/")
 @Controller
 public class TourDetailController extends BaseController{
 	@Autowired
