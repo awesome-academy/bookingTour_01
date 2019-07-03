@@ -27,7 +27,6 @@
 /home/minhngungu/Downloads/GitStorage/bookingTour_01/src/main/java/app/model/Tours.java
 /home/minhngungu/Downloads/GitStorage/bookingTour_01/src/main/java/app/service/impl/CarServiceImpl.java
 /home/minhngungu/Downloads/GitStorage/bookingTour_01/src/main/java/app/service/impl/UserServiceImpl.java
-/home/minhngungu/Downloads/GitStorage/bookingTour_01/src/main/java/app/controller/index.java
 /home/minhngungu/Downloads/GitStorage/bookingTour_01/src/main/java/app/controller/AuthController.java
 /home/minhngungu/Downloads/GitStorage/bookingTour_01/src/main/java/app/model/Places.java
 /home/minhngungu/Downloads/GitStorage/bookingTour_01/src/main/java/app/controller/ToursController.java
@@ -35,6 +34,7 @@
 /home/minhngungu/Downloads/GitStorage/bookingTour_01/src/main/java/app/model/Car.java
 /home/minhngungu/Downloads/GitStorage/bookingTour_01/src/main/java/app/controller/admin/TourDetailController.java
 /home/minhngungu/Downloads/GitStorage/bookingTour_01/src/main/java/app/validator/CarValidator.java
+/home/minhngungu/Downloads/GitStorage/bookingTour_01/src/main/java/app/controller/IndexController.java
 /home/minhngungu/Downloads/GitStorage/bookingTour_01/src/main/java/app/util/DateUtil.java
 /home/minhngungu/Downloads/GitStorage/bookingTour_01/src/main/java/app/model/Role.java
 /home/minhngungu/Downloads/GitStorage/bookingTour_01/src/main/java/app/service/ToursService.java

@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@Controller
+@Controller("Index for admin")
 public class IndexController {
 
 	@RequestMapping(value = {"/admin","/admin/index"}, method = RequestMethod.GET)
