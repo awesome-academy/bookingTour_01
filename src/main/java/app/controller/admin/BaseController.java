@@ -31,6 +31,7 @@ public class BaseController {
 		return count / Constants.PAGESIZE + 1;
 	}
 
+
 	private long setlimitPage(long end) {
 		if (end < Constants.LIMITOFPAGELOAD)
 			return end;
@@ -53,6 +54,7 @@ public class BaseController {
 		if (pageNumber >= (limitpage + begin)) {
 			begin = (begin + Constants.LIMITOFPAGELOAD) * (pageNumber / Constants.LIMITOFPAGELOAD);
 			limitpage = checkLimitPage(begin, end);
+
 		}
 		model.addAttribute("beginIndex", begin);
 		model.addAttribute("endIndex", limitpage);

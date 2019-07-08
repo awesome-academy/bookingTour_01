@@ -29,4 +29,9 @@ public class CarDAOImpl extends GenericDAO<Integer, Car> implements CarDAO {
 		return (long) getSession().createCriteria(Car.class).setProjection(Projections.rowCount()).uniqueResult();
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Car> loadAllCars() {
+		return getSession().createQuery("FROM Car as T ORDER BY T.numberOfSeater ASC").getResultList();
+	}
 }

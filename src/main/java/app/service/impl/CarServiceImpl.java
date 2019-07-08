@@ -67,4 +67,13 @@ public class CarServiceImpl extends BaseServiceImpl implements CarService {
 			return (Long) null;
 		}
 	}
+
+	@Override
+	public List<Car> loadAllCars() {
+		try {
+			return getCarDAO().loadAllCars();
+		} catch (Exception e) {
+			return null;
+		}
+	}
 }

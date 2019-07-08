@@ -20,6 +20,11 @@
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	
+	<bean id="placesDAO" class="app.dao.impl.PlacesDAOImpl">
+		
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
 	<bean id="tourDetailsDAO" class="app.dao.impl.TourDetailsDAOImpl">
 		
 		<property name="sessionFactory" ref="sessionFactory" />
